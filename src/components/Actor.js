@@ -13,7 +13,7 @@ class Actor extends Component{
     render(){
         const {img ,name,nickname,birthday}=this.state
         return(
-<div class="card col-md-4 col-sm-6" >
+<div class="card col-md-3 col-sm-10 m-1" >
 <h5 class="card-title text-center m-1">{name}</h5>
        <div className="card-header" >
               <img src={img} alt={name} />

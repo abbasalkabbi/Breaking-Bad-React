@@ -1,54 +1,43 @@
 import React from "react";
 import { Component } from "react";
-import Actor from "./components/Actor";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from './pages/home'
+import Characters from "./pages/characters";
+import Blogs from "./pages/Blogs";
+import NoPage from "./pages/NoPage";
+import Test from "./pages/test";
 
 class App extends Component{
+    // eslint-disable-next-line no-useless-constructor
     constructor(){
         super()
-        this.state={
-            characters:[],
-            finished:false
-        }
-
-    }
-    componentDidMount(){
-        fetch('https://breakingbadapi.com/api/characters')
-        .then((res)=>res.json())
-        .then((json)=>{
-            this.setState({
-                characters:json,
-                finished:true
-            })
-        })
-    }
-    MappingActor(){
-                
-        if(this.state.finished){
-        const data= this.state.characters.map(character=>
-            <Actor 
-            name={character.name}
-            nickname={character.nickname}
-            birthday={character.birthday}
-            img={character.img}
-            />
-            )
-            return data
-        }
-       
        
     }
+    
+    
     render(){
-        const {finished}=this.state
+       
         return(
            
-            <div className='container'>
-                {!finished ?'isloading':''}
-                <div className="row">
-                {this.MappingActor()}
-                </div>
-                 
+            <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="characters" element={<Characters/>}>
+      <Route path=":id" element={<Characters/>} />
+    </Route>
+    <Route path="blogs" element={<Blogs/>}>
+      <Route path=":id" element={<Blogs/>} />
+    </Route>
+    <Route path="test" element={<Test/>}>
+      <Route path=":id" element={<Test/>} />
+    </Route>
                 
-            </div>
+                <Route path="*" element={<NoPage />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
             
         )
     }
