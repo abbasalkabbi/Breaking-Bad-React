@@ -2,7 +2,7 @@ import React from 'react'
 import {Component} from 'react'
 
 
-import {  Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 
 
 import Actor from '../components/Actor'
@@ -53,7 +53,7 @@ class Characters extends Component{
             <Actor 
             name={character.name}
             nickname={character.nickname}
-            birthday={character.birthday}
+            id={character.char_id}
             img={character.img}
             />
             )
@@ -88,7 +88,7 @@ class Characters extends Component{
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&#8249; Previous</a>
            </li>
         }
-        else if(page>=1){
+        else if(page===1){
            Previous= <li className='page-item'><a className="page-link" href='/characters'>&#8249; Previous</a></li>
          }else{
            Previous= <li className='page-item'><a className="page-link" href={'/characters/'+(page-1)}>&#8249; Previous</a></li>
@@ -108,18 +108,21 @@ class Characters extends Component{
             <div className='container'>
                 {loading}
 
-                <div className="row d-flex justify-content-between justify-content-sm-center">
+<div className="row">
                 {this.MappingActor()}
                 </div>
                
-                
+
+              
+           
+            
                 <ul className="pagination d-flex justify-content-between">
                {Previous}
                {Next}
               </ul>
              
             </div>
-            
+    
         )
     }
     //End Use render

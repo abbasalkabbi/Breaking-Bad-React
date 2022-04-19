@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from './pages/home'
 import Characters from "./pages/characters";
-import Blogs from "./pages/Blogs";
+import Character from "./pages/character";
 import NoPage from "./pages/NoPage";
-import Test from "./pages/test";
+
 
 class App extends Component{
     // eslint-disable-next-line no-useless-constructor
@@ -27,12 +27,10 @@ class App extends Component{
                 <Route path="characters" element={<Characters/>}>
       <Route path=":id" element={<Characters/>} />
     </Route>
-    <Route path="blogs" element={<Blogs/>}>
-      <Route path=":id" element={<Blogs/>} />
-    </Route>
-    <Route path="test" element={<Test/>}>
-      <Route path=":id" element={<Test/>} />
-    </Route>
+    <Route path="character/:id" element={<Character/>}/>
+      
+   
+    
                 
                 <Route path="*" element={<NoPage />} />
               </Route>
