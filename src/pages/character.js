@@ -2,6 +2,7 @@ import React from 'react'
 import {Component} from 'react'
 import { useParams } from 'react-router-dom'
 import Info from '../components/info'
+import Cardimage from '../components/Cardimage'
 
 
 class Character extends Component{
@@ -40,23 +41,38 @@ class Character extends Component{
         const {character}=this.state
         const loading=''
 
+         /*function get and style occupation */ 
+            function occupation(){
+                let p=''
+                const data_occupation=character[0].occupation.map(a=>
+                     p +=a +' '+'/'
+                     
+                    )
+                   return p.slice(0, -1)
+            }
+        /*END function get and style occupation */ 
+
          //return
          if(this.state.finished){
          return(
-            <div className="container">
-                 <div className='row'> 
+            <div className="container ">
+                 <div className='row m-1 '> 
+                
                  {/* image */}
-                 <div className='col-lg-5 col-md-6 '>
-                      <div class="mb-2 text-center ">
-                            <img class="w-75 z-depth-2 rounded-2 " src={character[0].img} alt=""/>
-                      </div>
+                 <Cardimage
+                 img={character[0].img}
+                 name={character[0].name}
+                 occupation={occupation()}
+                 />
+                
                       
-                 </div>
+                      
+             
                  {/* END image */}
                  {/* about */}
                  <div className='col-lg-5 col-md-6'>
                      <div className='card mb-4'>
-                           <div class="card-body">
+                           <div className="card-body">
                                {/* Full Name */}
                                  <Info
                                   name='Full Name'
@@ -82,7 +98,7 @@ class Character extends Component{
                                     {/* occupation */}
                                     <Info
                                    name='Occupation'
-                                  info={character[0].occupation}
+                                  info={occupation()}
                                   />
                                    {/* End occupation */}
                                    <hr/>
