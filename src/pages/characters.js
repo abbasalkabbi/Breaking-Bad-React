@@ -6,6 +6,7 @@ import {useParams } from "react-router-dom";
 
 
 import Actor from '../components/Actor'
+import { Loading } from '../components/Loading';
 
 //Statr class character
 class Characters extends Component{
@@ -71,17 +72,12 @@ class Characters extends Component{
         let loading=""
         let Previous=''
         let Next=''
-        // loading  function
+        // loadiionng  function
         if(!finished){
-             loading= 
-             <div className=' d-flex justify-content-center'>
-                <div class="spinner-border d-flex " role="status">
-                        <span class="  visually-hidden">Loading...</span>
-               </div>
-             </div>
+             loading= <Loading/>
              
         }
-        // end loading  function
+        // end loading  funct
         //Previous function
         if(page===0){
             Previous= <li class="page-item disabled">
@@ -94,7 +90,7 @@ class Characters extends Component{
            Previous= <li className='page-item'><a className="page-link" href={'/characters/'+(page-1)}>&#8249; Previous</a></li>
          }
         //END Previous function
-        //Previous function
+        //Next function
         if(page===6){
             Next= <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next &#8250;</a>
@@ -102,10 +98,11 @@ class Characters extends Component{
           }else{
             Next=  <li className='page-item'><a className="page-link" href={'/characters/'+(page+1)}>Next &#8250;</a></li>
           }
-         //END Previous function
+         //END Next function
         return(
            
             <div className='container'>
+                
                 {loading}
 
 <div className="row">

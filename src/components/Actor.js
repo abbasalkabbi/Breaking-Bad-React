@@ -17,7 +17,7 @@ class Actor extends Component{
             <div class="col-12 col-sm-6 col-lg-3 ">
                  <div class="single_advisor_profile wow fadeInUp " data-wow-delay="0.2s" >
                  <div class="advisor_thumb"><img className='image-profile' src={img} alt={name}/></div>
-                 <a href={'./character/'+id}>
+                 <a href={'../character/'+id}>
                  <div class="single_advisor_details_info">
                 <h6>{name}</h6>
                 <p class="designation">{nickname} </p>
@@ -30,19 +30,3 @@ class Actor extends Component{
     }
 }
 export default Actor
-/**
- * 
- * <div class="card col-md-3 col-sm-10 m-1" >
-<h5 class="card-title text-center m-1">{name}</h5>
-       <div className="card-header" >
-              <img src={img} alt={name} />
-        </div>
-  
-  <div class="card-body">
-   
-    <h5 class="card-text">NickName:<span class="h6"> {nickname}</span></h5>
-    <h5 class="card-text">birthday:<span class="h6"> {birthday}</span></h5>
-   
-  </div>
-</div>
- */
