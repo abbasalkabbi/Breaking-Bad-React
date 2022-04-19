@@ -6,6 +6,7 @@ import Home from './pages/home'
 import Characters from "./pages/characters";
 import Character from "./pages/character";
 import NoPage from "./pages/NoPage";
+import Quotes from "./pages/Quotes";
 
 
 class App extends Component{
@@ -25,10 +26,12 @@ class App extends Component{
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route path="characters" element={<Characters/>}>
-      <Route path=":id" element={<Characters/>} />
-    </Route>
-    <Route path="character/:id" element={<Character/>}/>
-      
+                      <Route path=":id" element={<Characters/>} />
+                </Route>
+               <Route path="character/:id" element={<Character/>}/>
+               <Route path="quotes" element={<Quotes/>}/>
+                     
+                
    
     
                 

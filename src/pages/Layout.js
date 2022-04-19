@@ -4,13 +4,14 @@ const Layout = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        
         <ul className="navbar-nav">
           <li className="nav-item">
              <NavLink
              to="/"
              className={({isActive})=>(isActive?'nav-link active':'nav-link ')}
              >
-             Home
+             Home |
              </NavLink>
           </li>
           <li className="nav-item">
@@ -18,10 +19,17 @@ const Layout = () => {
              to='characters'
              className={({isActive})=>(isActive?'nav-link active':'nav-link ')}
              >
-               Characters
+               Characters |
              </NavLink>
           </li>
-         
+          <li className="nav-item">
+             <NavLink 
+             to='quotes'
+             className={({isActive})=>(isActive?'nav-link active':'nav-link ')}
+             >
+               Quote
+             </NavLink>
+          </li>
         </ul>
       </nav>
 

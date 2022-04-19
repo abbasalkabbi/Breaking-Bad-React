@@ -101,7 +101,7 @@ class Characters extends Component{
          //END Next function
         return(
            
-            <div className='container'>
+            <div className='container mt-5'>
                 
                 {loading}
 
@@ -133,6 +133,4 @@ export default (props)=>(
     params={useParams()}
     />
 )
-/**Previous= <li class="page-item disabled">
-           <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&#8249; Previous</a>
-          </li> */
+        

@@ -1,4 +1,12 @@
-
+/**Home*/
+.home{
+    width: 100%;
+padding: 10px;
+}
+.rotated {
+    transform: rotateY(180deg);
+  }
+/**END Home*/
 .advisor_thumb img{
     max-width: 100%;
     width: 100%;
@@ -117,3 +125,22 @@
 .single_advisor_profile a{
     text-decoration: none;
 }
+/*Quote Card*/
+.blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+  }
+  
+  .blockquote-custom-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+    left: 50px;
+  }
+  
+/*Quote Card*/
