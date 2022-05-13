@@ -2,7 +2,7 @@
   "name": "braking-bad-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://{abbasalkabbi}.github.io",
+  "homepage": "https://abbasalkabbi.github.io",
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
